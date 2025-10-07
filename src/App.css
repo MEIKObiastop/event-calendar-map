@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
+.main-layout {
+  display: flex;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-sidebar {
+  display: none;
+  width: 100%;
+  padding: 10px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow-y: auto;
 }
 
-.App-link {
-  color: #61dafb;
+/* スマホ表示切替 */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .header-sidebar {
+    display: block;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Sidebar内のリンクボタン装飾 */
+.link-button {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+  margin-right: 5px;
 }
